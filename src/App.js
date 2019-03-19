@@ -7,30 +7,21 @@ import './App.css';
 
 let rightGuess = 0;
 let topScore = 0;
-let pressComment = "Press on a friend to gain points! Click on the same one twice and you lose!";
+let pressComment = "Press on a  to gain points! Click on the same one twice and you lose!";
 
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+  
+  // Setting this.state.matches to the matches json array
+  state = {
+    matches,
+    rightGuess,
+    topScore,
+    pressComment
+};
+
+
   }
-}
+
 
 export default App;
