@@ -7,7 +7,7 @@ import './App.css';
 
 let rightGuess = 0;
 let topScore = 0;
-let pressComment = "Press on a  to gain points! Click on the same one twice and you lose!";
+let pressComment = "Press on a comment to gain points! Click on the same one twice and you lose!";
 
 
 class App extends Component {
