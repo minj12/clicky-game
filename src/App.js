@@ -15,11 +15,33 @@ class App extends Component {
   // Setting this.state.matches to the matches json array
   state = {
     matches,
-    rightGuess,
+    rightGuesses,
     topScore,
     pressComment
 };
 
+setClicked = id => {
+  
+  const matches = this.state.matches;
+
+  const clickedMatch = matches.filter(match => match.id === id);
+
+  if (clickedMatch[0].clicked){
+
+    console.log ("Right Guesses: " + rightGuesses);
+    console.log ("Top Score: " + topScore);
+
+    rightGuesses = 0;
+            clickMessage = "You clicked on this one already!!"
+
+            for (let i = 0 ; i < matches.length ; i++){
+              matches[i].clicked = false;
+          }
+          
+          this.setState({pressComment});
+          this.setState({ rightGuesses });
+          this.setState({matches});
+}
 
   }
 
