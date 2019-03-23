@@ -41,7 +41,17 @@ setClicked = id => {
           this.setState({pressComment});
           this.setState({ rightGuesses });
           this.setState({matches});
-}
+
+        } else if (rightGuesses < 11) {
+
+          // Set its value to true
+          clickedMatch[0].clicked = true;
+        
+          righttGuesses++;
+            
+          clickMessage = "Great! You haven't click on that one yet! Keep going!";
+
+        }
 
   }
 
