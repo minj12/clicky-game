@@ -49,7 +49,7 @@ setClicked = id => {
         
           righttGuesses++;
             
-          clickMessage = "Great! You haven't click on that one yet! Keep going!";
+          pressComment = "Great! You haven't click on that one yet! Keep going!";
 
         }
 
