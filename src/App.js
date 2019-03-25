@@ -5,7 +5,7 @@ import Title from "./components/Title";
 import logo from './logo.svg';
 import './App.css';
 
-let rightGuess = 0;
+let rightGuesses = 0;
 let topScore = 0;
 let pressComment = "Press on a comment to gain points! Click on the same one twice and you lose!";
 
@@ -47,13 +47,53 @@ setClicked = id => {
           // Set its value to true
           clickedMatch[0].clicked = true;
         
-          righttGuesses++;
+          rightGuesses++;
             
-          pressComment = "Great! You haven't click on that one yet! Keep going!";
+          pressComment = "Nice! This is the first click on that one!";
 
+          if (rightGuesses > topScore){
+            topScore = rightGuesses;
+            this.setState({ topScore });
         }
 
-  }
+         // Shuffle the array to be rendered in a random order
+         matches.sort(function(a, b){return 0.5 - Math.random()});
 
+         // Set this.state.matches equal to the new matches array
+         this.setState({ matches });
+         this.setState({rightGuesses});
+         this.setState({pressComment});
+     } else {
+
+      // Set its value to true
+      clickedMatch[0].clicked = true;
+
+      // restart the guess counter
+      rightGuesses = 0;
+
+      // Egg on the user to play again
+      pressComment = "You catched them all!!!";
+      topScore = 12;
+      this.setState({ topScore });
+      
+      for (let i = 0 ; i < matches.length ; i++){
+          matches[i].clicked = false;
+      }
+
+      // The array is shuffled in a random order
+      matches.sort(function(a, b){return 0.5 - Math.random()});
+
+      this.setState({ matches });
+      this.setState({rightGuesses});
+      this.setState({pressComment});
+
+    }
+};
+
+
+     render() { return (
+
+    );
+  }
 
 export default App;
