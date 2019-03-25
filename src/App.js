@@ -92,8 +92,36 @@ setClicked = id => {
 
 
      render() { return (
+      
+      <Wrapper>
+      <Title> The Clicky Game</Title>
+
+      <h3 className="scoreSummary">
+          {this.state.pressComment}
+      </h3>
+      
+      <h3 className="scoreSummary card-header">
+          Right Guesses: {this.state.rightGuesses} 
+          <br />
+          Top Score: {this.state.topScore} 
+      </h3>
+      <div className="container">
+      <div className="row">
+      {this.state.matches.map(match => (
+          <MatchCard
+              setClicked={this.setClicked}
+              id={match.id}
+              key={match.id}
+              image={match.image}
+          />
+      ))}
+      </div>
+      </div>
+
+  </Wrapper>
 
     );
   }
+}
 
 export default App;
