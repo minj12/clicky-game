@@ -94,7 +94,7 @@ setClicked = id => {
      render() { return (
       
       <Wrapper>
-      <Title> The Clicky Game</Title>
+      <Title> The Friend Match Game</Title>
 
       <h3 className="scoreSummary">
           {this.state.pressComment}
