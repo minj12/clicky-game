@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import FriendMatchCard from "./components/FriendMatchCard";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
-import logo from './logo.svg';
 import './App.css';
 
 let rightGuesses = 0;
@@ -32,7 +31,7 @@ setClicked = id => {
     console.log ("Top Score: " + topScore);
 
     rightGuesses = 0;
-            clickMessage = "You clicked on this one already!!"
+            pressComment = "You clicked on this one already!!"
 
             for (let i = 0 ; i < matches.length ; i++){
               matches[i].clicked = false;
@@ -108,7 +107,7 @@ setClicked = id => {
       <div className="container">
       <div className="row">
       {this.state.matches.map(match => (
-          <MatchCard
+          <FriendMatchCard
               setClicked={this.setClicked}
               id={match.id}
               key={match.id}
